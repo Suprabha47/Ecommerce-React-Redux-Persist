@@ -54,7 +54,7 @@ const Checkout = () => {
           />
         </div>
         <div className="form-item">
-          <label>Phone Number </label>
+          <label>Phone Number 2 </label>
           <input
             type="text"
             value={phone}
