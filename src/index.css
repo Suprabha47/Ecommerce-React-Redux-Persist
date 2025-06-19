@@ -275,6 +275,7 @@ body {
 
 .title-price {
   display: flex;
+  justify-content: space-between;
   min-height: 4rem;
 }
 .title-price .price-badge {
