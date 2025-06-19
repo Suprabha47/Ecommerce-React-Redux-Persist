@@ -21,6 +21,7 @@ const ProductItem = (props) => {
         <Link to={`/product/${id}`}>
           <img src={images} alt={title} style={{ width: "100%" }} />
         </Link>
+
         <div className="title-price">
           <p className="text">{title}</p>
           <p className="text price-badge">$ {price}</p>

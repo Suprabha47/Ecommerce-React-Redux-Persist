@@ -1,10 +1,15 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f8f9fa;
+  margin: 0;
 }
 .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
-  background-image: linear-gradient(90deg, #7c71e0, #dbd9ef);
+  background: linear-gradient(180deg, #7c71e0, #dbd9ef);
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -299,4 +304,81 @@ body {
 }
 .checkout .order-summary-container {
   max-height: max-content;
+}
+.footer {
+  padding: 2rem;
+  background-color: white;
+  font-family: sans-serif;
+  color: #1e2a78;
+  border-top: 1px solid #f0f0f0;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #1e2a78;
+  font-weight: 500;
+}
+
+.footer-divider {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  color: #777;
+  font-size: 0.875rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  color: #1e2a78;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-icons svg:hover {
+  transform: scale(1.1);
+  color: #3b82f6;
 }

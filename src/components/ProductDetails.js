@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 import Header from "./Header";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const ProductDetails = () => {
   const [data, setData] = useState([]);
@@ -49,6 +49,7 @@ const ProductDetails = () => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
