@@ -9,23 +9,24 @@ const Cart = () => {
   return (
     <>
       <Header />
-
-      <div className="complete-container">
-        <div className="cart-container">
-          <h2 style={{ textAlign: "center" }}>My Cart</h2>
-          {cartItems.items.map((item) => (
-            <CartItem data={item} key={item.id} />
-          ))}
-        </div>
-        <div className="cart-container">
-          <h2 style={{ textAlign: "center" }}>Order Summary</h2>
-          {cartItems.total === 0 ? (
-            <h3>Oops your cart is empty!</h3>
-          ) : (
-            <OrderSummary />
-          )}
-        </div>
-      </div>
+      {cartItems.total === 0 ? (
+        <h3 style={{ textAlign: "center" }}>Oops your cart is empty!</h3>
+      ) : (
+        <>
+          <div className="complete-container">
+            <div className="cart-container">
+              <h2 style={{ textAlign: "center" }}>My Cart</h2>
+              {cartItems.items.map((item) => (
+                <CartItem data={item} key={item.id} />
+              ))}
+            </div>
+            <div className="cart-container">
+              <h2 style={{ textAlign: "center" }}>Order Summary</h2>
+              <OrderSummary />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

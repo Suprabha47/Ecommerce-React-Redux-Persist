@@ -21,7 +21,7 @@ const CartItem = ({ data }) => {
 
   const handleRemoveItem = () => {
     dispatch(removeFromCart(id));
-    toast("Item removed from your cart!");
+    toast("Item removed from your cart!", { position: "bottom-right" });
   };
 
   return (

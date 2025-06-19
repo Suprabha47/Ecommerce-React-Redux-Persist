@@ -12,7 +12,7 @@ const ProductItem = (props) => {
 
   const handleAdd = (item) => {
     dispatch(addToCart(item));
-    toast.success(`${item.title} Added to Cart!`);
+    toast.success(`${item.title} Added to Cart!`, { position: "bottom-right" });
   };
 
   return (
