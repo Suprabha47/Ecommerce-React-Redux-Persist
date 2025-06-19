@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
-import Shimmer from "../pages/Shimmer";
+import Shimmer from "./ShimmerProductList";
 import { ToastContainer } from "react-toastify";
 
 const ProductList = () => {

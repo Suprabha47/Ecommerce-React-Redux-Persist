@@ -3,7 +3,15 @@ import storage from "redux-persist/lib/storage";
 import cartReducer from "./cartSlice";
 import orderReducer from "./orderSlice";
 import persistReducer from "redux-persist/es/persistReducer";
-import { persistStore } from "redux-persist";
+import {
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 const reducers = combineReducers({ cart: cartReducer, order: orderReducer });
 const persistConfig = {
@@ -13,6 +21,12 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducers);
 const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 const persistor = persistStore(store);
 

@@ -2,7 +2,14 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f8f9fa;
   margin: 0;
+  height: 100%;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -63,7 +70,8 @@ body {
   font-size: 2.4rem;
   font-weight: 700;
 }
-.product-details-container {
+.product-details-container,
+.shimmer-cart {
   display: flex;
   gap: 2rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -306,7 +314,9 @@ body {
   max-height: max-content;
 }
 .footer {
+  margin-top: 3rem;
   padding: 2rem;
+  bottom: 0;
   background-color: white;
   font-family: sans-serif;
   color: #1e2a78;

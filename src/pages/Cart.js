@@ -2,12 +2,13 @@ import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 import Header from "../components/Header";
 import OrderSummary from "../components/OrderSummary";
+import Footer from "../components/Footer";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
 
   return (
-    <>
+    <div className="container">
       <Header />
       {cartItems.total === 0 ? (
         <h3 style={{ textAlign: "center" }}>Oops your cart is empty!</h3>
@@ -27,7 +28,8 @@ const Cart = () => {
           </div>
         </>
       )}
-    </>
+      <Footer />
+    </div>
   );
 };
 export default Cart;

@@ -4,7 +4,7 @@ import ProductList from "../components/ProductList";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <Header />
       <ProductList />
       <Footer />

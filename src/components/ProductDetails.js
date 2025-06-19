@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 import Header from "./Header";
 import { toast, ToastContainer } from "react-toastify";
+import Shimmer from "./ShimmerCart";
 
 const ProductDetails = () => {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ const ProductDetails = () => {
 
   const item = data.find((p) => p.id === parseInt(productId));
   console.log(item);
-  if (!item) return <p>Loading...</p>;
+  if (!item) return <Shimmer />;
   return (
     <>
       <Header />
