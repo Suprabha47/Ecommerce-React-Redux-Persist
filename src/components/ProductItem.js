@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 import { Link } from "react-router";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductItem = (props) => {
   const dispatch = useDispatch();
@@ -10,7 +12,7 @@ const ProductItem = (props) => {
 
   const handleAdd = (item) => {
     dispatch(addToCart(item));
-    alert("Item Added to Cart!");
+    toast.success(`${item.title} Added to Cart!`);
   };
 
   return (
@@ -19,12 +21,16 @@ const ProductItem = (props) => {
         <Link to={`/product/${id}`}>
           <img src={images} alt={title} style={{ width: "100%" }} />
         </Link>
-        <h3 className="text">{title}</h3>
-        <p className="text">$ {price}</p>
-        <p className="text">{rating}⭐</p>
-        <button className="add btn" onClick={() => handleAdd(props.data)}>
-          Add to Cart
-        </button>
+        <div className="title-price">
+          <p className="text">{title}</p>
+          <p className="text price-badge">$ {price}</p>
+        </div>
+        <div className="rating-cart-btn">
+          <p className=" text rating-badge">{rating}⭐</p>
+          <button className="add btn" onClick={() => handleAdd(props.data)}>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import image from "./shopping-bag.png";
 const Header = () => {
   const data = useSelector((state) => state.cart);
 
@@ -14,8 +15,14 @@ const Header = () => {
         <Link to="/" className="link">
           Home
         </Link>
-        <Link to="/cart" className="link">
-          Cart ({data.items.length})
+        <Link to="/cart" className="link cart-link">
+          <img
+            src={image}
+            alt="cart"
+            style={{ width: "1.8rem" }}
+            className="cart-img"
+          />
+          <p>({data.items.length})</p>
         </Link>
         <Link to="/checkout" className="link">
           Order

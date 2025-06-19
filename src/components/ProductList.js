@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 import Shimmer from "../pages/Shimmer";
+import { ToastContainer } from "react-toastify";
 
 const ProductList = () => {
   const [data, setData] = useState([]);
@@ -24,6 +25,7 @@ const ProductList = () => {
           <ProductItem data={item} className="item" key={item.id} />
         ))}
       </div>
+      <ToastContainer autoClose={2000} closeOnClick />
     </div>
   );
 };

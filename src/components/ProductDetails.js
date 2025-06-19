@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 import Header from "./Header";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const [data, setData] = useState([]);
@@ -35,13 +36,13 @@ const ProductDetails = () => {
           <h2>{item.title}</h2>
           <p>{item.description}</p>
           <p>Category: {item.category}</p>
-          <p>Price: $ {item.price}</p>
-          <p>{item.rating} ⭐</p>
+          <p className="price-badge">Price: $ {item.price}</p>
+          <p className="rating-badge">{item.rating} ⭐</p>
           <button
             className="btn add"
             onClick={() => {
               dispatch(addToCart(item));
-              alert("Added to Cart!");
+              toast.success("Added to Cart!");
             }}
           >
             Add to Cart
