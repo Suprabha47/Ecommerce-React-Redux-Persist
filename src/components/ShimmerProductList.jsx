@@ -9,6 +9,10 @@ const Shimmer = () => {
       <div className="shimmer-card product-item"></div>
       <div className="shimmer-card product-item"></div>
       <div className="shimmer-card product-item"></div>
+      <div className="shimmer-card product-item"></div>
+      <div className="shimmer-card product-item"></div>
+      <div className="shimmer-card product-item"></div>
+      <div className="shimmer-card product-item"></div>
     </div>
   );
 };

@@ -14,13 +14,14 @@ const Header = () => {
           Home
         </Link>
         <Link to="/cart" className="link cart-link">
+          Cart
           <img
             src={image}
             alt="cart"
             style={{ width: "1.8rem" }}
             className="cart-img"
           />
-          <p>({data.items.length})</p>
+          <p>{data.items.length}</p>
         </Link>
         <Link to="/checkout" className="link">
           Order

@@ -11,7 +11,15 @@ const Cart = () => {
     <div className="container">
       <Header />
       {cartItems.total === 0 ? (
-        <h3 style={{ textAlign: "center" }}>Oops your cart is empty!</h3>
+        <h3
+          style={{
+            textAlign: "center",
+            marginBottom: "15%",
+            marginTop: "5rem",
+          }}
+        >
+          Oops your cart is empty!
+        </h3>
       ) : (
         <>
           <div className="complete-container">
@@ -23,7 +31,7 @@ const Cart = () => {
             </div>
             <div className="cart-container">
               <h2 style={{ textAlign: "center" }}>Order Summary</h2>
-              <OrderSummary />
+              <OrderSummary condition="checkout" />
             </div>
           </div>
         </>

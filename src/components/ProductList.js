@@ -15,7 +15,13 @@ const ProductList = () => {
     fetchProductData();
   }, []);
 
-  if (data.length === 0) return <Shimmer />;
+  if (data.length === 0)
+    return (
+      <div className="main-container">
+        <h2>All Products</h2>
+        <Shimmer />
+      </div>
+    );
 
   return (
     <div className="main-container">
